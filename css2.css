@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes shake{
+    0%, 100%{ translate: 0;}
+25%{ translate: 8px 0;}
+75%{ translate:-8px 0 ;}
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+padding: 10px;
+  background: linear-gradient(135deg,gray 50%, black);
+}
+.contaner{
+    padding: 15px 25px;
+    border-radius: 10px;
+    max-width: 700px;
+    width: 100%;
+    background-color:rgb(180, 178, 178);
+    /* background:linear-gradient(135deg,#a7a7a7 50%, #454545) ; */
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.contaner .title{
+    font-weight: 500;
+    font-size: 30px;
+   /* color: rgb(225, 215, 202); */
+   position: relative;
+  
+}
+.contaner .title::before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 60px;
+    left: 0px;
+    top: 40px;
+    background:linear-gradient(135deg,gray 40%, black);
+}
+.contaner form .info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+     margin: 20px 0px 12px 0;
+    
+}
+
+form .info .detales{
+    
+   margin-bottom: 10px;
+    width: calc(100% /2 - 20px);
+}
+
+form .info .detales .name{
+    display: block;
+    font-weight: 500;
+   margin-bottom: 5px;
+}
+
+form .info .detales input{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border: 1px solid gray;
+    padding-left: 10px;
+    font-size: 15px;
+    animation: shake 0.14s 3;
+    -webkit-animation: shake 0.14s 3;
+    transition: all 0.3s ease;
+    border-bottom-width:2px ;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+form .info .detales input:focus,
+form .info .detales input:valid{
+    border-color:rgb(77, 77, 77);
+    animation: none;
+    -webkit-animation: none;
+}
+form .gender .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender .chosse-one{
+    width: 80%;
+    margin: 12px 0;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+form .gender .chosse-one .dot {
+  width: 15px;
+  height: 15px;
+  background-color: #d9d9d9;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-right: 10px;
+  transition:all 0.3s ease;
+  -webkit-transition:all 0.3s ease;
+  -moz-transition:all 0.3s ease;
+  -ms-transition:all 0.3s ease;
+  -o-transition:all 0.3s ease;
+}
+form .gender .chosse-one label{
+display: flex;
+align-items: center;
+
+
+}
+#ga-1:checked ~ .chosse-one .one,
+#ga-2:checked ~ .chosse-one .two,
+#ga-3:checked ~ .chosse-one .three{
+  border-color: #d9d9d9; 
+  background-color: aqua; 
+}
+form input[type="radio"]{
+    display: none;
+}
+form .done{
+    height: 40px;
+    margin: 20px 0;
+    
+}
+form .done input {
+    height: 100%;
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    color: antiquewhite;
+    cursor: pointer;
+    border-radius:2px ;
+    background: linear-gradient(135deg,gray 50%, black);
+    -webkit-border-radius:2px ;
+    -moz-border-radius:2px ;
+    -ms-border-radius:2px ;
+    -o-border-radius:2px ;
+}
+form .done input:hover{
+        background: linear-gradient(-135deg,gray 50%, black);
+
+}
+  @media (max-width:584px) {
+    .contaner{
+        max-width: 100%;
+    }
+    form .info .detales{
+    
+   margin-bottom: 10px;
+    width: 100%;
+  }  
+form .gender .chosse-one{
+    width: 100%;}
+
+    .contaner form .info{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    form .info::-webkit-scrollbar{
+        width: 2px;
+    }
+  }
